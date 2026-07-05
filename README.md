@@ -2,9 +2,9 @@
 A full-stack AI-powered flashcard application featuring automated deck generation from text/PDFs, dynamic background processing status tracking, and an optimized spaced-repetition core built on the SM-2 algorithm using Next.js and MongoDB.
 
 
-# BrainSprout AI — Intelligent Flashcard Generator
+# Intelligent Flashcard Generator
 
-BrainSprout AI is a full-stack web application that leverages Large Language Models (LLMs) to automatically convert dense learning materials (text, PDFs, or audio) into high-quality, study-ready flashcard decks. The platform incorporates a sophisticated spaced-repetition review loop based on the SM-2 algorithm to optimize memory retention over time.
+This AI falshcard generator is a full-stack web application that leverages Large Language Models (LLMs) to automatically convert dense learning materials (text, PDFs, or audio) into high-quality, study-ready flashcard decks. The platform incorporates a sophisticated spaced-repetition review loop based on the SM-2 algorithm to optimize memory retention over time.
 
 ## 🚀 System Architecture & Layouts
 
