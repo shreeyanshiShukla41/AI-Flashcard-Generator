@@ -1,21 +1,26 @@
 import mongoose from "mongoose";
-import crypto from 'crypto';
+import crypto from "crypto";
 import { timeStamp } from "console";
 
 
-let USER_SCHEMA=mongoose.Schema;
+let userSchema = new mongoose.Schema(
+  {
+    _id: {
+      type: String,
+      default: crypto.randomUUID,
+    },
+    email: {
+      type: String,
+      required: true,
+      unique: true,
+      lowercase: true,
+      trim: true,
+    },
+    passwordHash: { type: String, required: true },
+    plan: { type: String, enum: ["free", "paid"], default: "free" },
+  },
+  { timestamps: true },
+);
 
-let user=mongoose.model({
-  _id: {
-    type: String,
-    default: crypto.randomUUID
-},
-email: { type: String, required: true, unique: true, lowercase: true, trim: true },
-passwordHash: { type: String, required: true },
-plan: { type: String, enum: ['free', 'paid'], default: 'free' },
-})
-
-const userSchema = new mongoose.Schema(definitionObject, { timestamps: true })
-
-const User=mongoose.model("User",USER_SCHEMA);
+const User = mongoose.model("User", userSchema);
 export default User;

@@ -1,18 +1,17 @@
 import mongoose from "mongoose";
 import crypto from 'crypto';
 import { timeStamp } from "console";
-import User from 'User';
+import User from './user.model.js';
 
-let DECK_SCHEMA=mongoose.Schema;
 
-let deck=mongoose.model({
+let deckSchema=new mongoose.Schema({
   _id: {
     type: String,
     default: crypto.randomUUID
 },
 userId:{
   type:String,
-  ref='User',
+  ref:'User',
  reference:true,
 },
 title:{
@@ -23,9 +22,8 @@ status:{
   type:String,
   enum:['processing', 'ready', 'failed'], default: 'ready'
 }
-})
+}, { timestamps: true })
 
-const deckSchema = new mongoose.Schema(definitionObject, { timestamps: true })
 
-const Deck=mongoose.model("Deck",DECK_SCHEMA);
+const Deck=mongoose.model("Deck",deckSchema);
 export default Deck;

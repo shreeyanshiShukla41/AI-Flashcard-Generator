@@ -13,7 +13,6 @@ async function main() {
   return await mongoose.connect(dbUrl);
 }
 
-// console.log(dbUrl)
 
 app.listen(port,()=>{
   console.log(`app listening at ${port}`);
